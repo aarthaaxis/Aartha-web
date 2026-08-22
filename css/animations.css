@@ -1,0 +1,120 @@
+/* ==========================================================================
+   AARTHA AXIS - SOPHISTICATED RESTOCK ANIMATION SYSTEM
+   ========================================================================== */
+
+/* Fullscreen Brand Luxury Intro */
+.intro-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background-color: var(--navy-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s;
+}
+
+.intro-splash.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Subtle Architectural Grid */
+.intro-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0;
+  animation: gridFade 1.2s 0.2s forwards ease;
+}
+
+/* Axis Vector Line */
+.intro-axis-svg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.axis-line {
+  stroke: var(--gold-primary);
+  stroke-width: 1.5;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 1.4s 0.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+.intro-logo-holder {
+  position: relative;
+  z-index: 2;
+  width: min(320px, 75vw);
+  opacity: 0;
+  transform: scale(0.96);
+  animation: revealLogo 1s 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.intro-logo-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Gold Sweep Effect */
+.intro-logo-holder::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(240, 199, 94, 0.4), transparent);
+  transform: skewX(-25deg);
+  animation: lightSweep 0.9s 1.5s ease-in-out forwards;
+}
+
+@keyframes gridFade {
+  to { opacity: 1; }
+}
+
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes revealLogo {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes lightSweep {
+  to { left: 180%; }
+}
+
+/* Viewport Scroll Fade Up */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .intro-splash { display: none !important; }
+  .reveal-on-scroll { opacity: 1 !important; transform: none !important; transition: none !important; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

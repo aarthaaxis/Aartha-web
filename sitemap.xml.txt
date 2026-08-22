@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://aarthaaxis.com/</loc></url>
+  <url><loc>https://aarthaaxis.com/what-we-do.html</loc></url>
+  <url><loc>https://aarthaaxis.com/how-we-work.html</loc></url>
+  <url><loc>https://aarthaaxis.com/who-we-help.html</loc></url>
+  <url><loc>https://aarthaaxis.com/work.html</loc></url>
+  <url><loc>https://aarthaaxis.com/insights.html</loc></url>
+  <url><loc>https://aarthaaxis.com/about.html</loc></url>
+  <url><loc>https://aarthaaxis.com/careers.html</loc></url>
+  <url><loc>https://aarthaaxis.com/notice.html</loc></url>
+  <url><loc>https://aarthaaxis.com/contact.html</loc></url>
+  <url><loc>https://aarthaaxis.com/terms.html</loc></url>
+  <url><loc>https://aarthaaxis.com/privacy-policy.html</loc></url>
+  <url><loc>https://aarthaaxis.com/cookie-policy.html</loc></url>
+  <url><loc>https://aarthaaxis.com/website-disclaimer.html</loc></url>
+</urlset>
